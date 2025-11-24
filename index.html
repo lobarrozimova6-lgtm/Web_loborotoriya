@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasport Ma’lumotlari Sayti</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef1f5;
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        .btn {
+            background: #28a745;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+        .btn:hover {
+            background: #218838;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 25px;
+        }
+        th, td {
+            border: 1px solid #444;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background: #1f3347;
+            color: white;
+        }
+        .flex-box {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+        }
+        .flex-item {
+            background: #2d8be0;
+            color: white;
+            padding: 20px;
+            width: 30%;
+            text-align: center;
+            border-radius: 10px;
+            font-size: 18px;
+        }
+        .grid-box {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 25px;
+        }
+        .grid-item {
+            background: #9b59b6;
+            padding: 20px;
+            color: white;
+            border-radius: 10px;
+            font-size: 18px;
+            text-align: center;
+        }
+        .extra {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 18px;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Pasport Ma’lumotlari Sayti</h1>
+    <p style="text-align:center;">Bu sayt orqali foydalanuvchi o‘z <b style="color:red;">pasport ma’lumotlarini</b> kiritishi mumkin.</p>
+
+    <h2>Ma’lumotlarni kiriting</h2>
+
+    <form id="passportForm">
+
+        <label>Familiya:</label>
+        <input type="text" id="familiya" placeholder="Familiyangizni kiriting">
+
+        <label>Ism:</label>
+        <input type="text" id="ism" placeholder="Ismingizni kiriting">
+
+        <label>Otasining ismi:</label>
+        <input type="text" id="otasining" placeholder="Otasining ismini kiriting">
+
+        <label>Jinsi:</label>
+        <select id="jinsi">
+            <option value="">Tanlang</option>
+            <option>Erkak</option>
+            <option>Ayol</option>
+        </select>
+
+        <label>Tug‘ilgan sana:</label>
+        <input type="date" id="sana">
+
+        <label>Pasport raqami:</label>
+        <input type="text" id="pasport" placeholder="AA1234567">
+
+        <label>Berilgan joy:</label>
+        <input type="text" id="joy" placeholder="Pasport berilgan joyni kiriting">
+
+        <label>Fuqarolik:</label>
+        <select id="fuqarolik">
+            <option value="">Tanlang</option>
+            <option>O'zbekiston</option>
+            <option>Qozog‘iston</option>
+            <option>Qirg‘iziston</option>
+        </select>
+
+        <button type="submit" class="btn">Saqlash</button>
+
+    </form>
+
+    <h2>Saqlangan ma’lumotlar</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Familiya</th>
+                <th>Ism</th>
+                <th>Otasining ismi</th>
+                <th>Jinsi</th>
+                <th>Tug‘ilgan sana</th>
+                <th>Pasport raqami</th>
+                <th>Berilgan joy</th>
+                <th>Fuqarolik</th>
+            </tr>
+        </thead>
+        <tbody id="dataTable"></tbody>
+    </table>
+
+    <h2>Flex va Grid misol</h2>
+
+    <div class="flex-box">
+        <div class="flex-item">Flex Box 1</div>
+        <div class="flex-item">Flex Box 2</div>
+        <div class="flex-item">Flex Box 3</div>
+    </div>
+
+    <div class="grid-box">
+        <div class="grid-item">Grid 1</div>
+        <div class="grid-item">Grid 2</div>
+        <div class="grid-item">Grid 3</div>
+    </div>
+
+   
+
+</div>
+
+
+<script>
+    document.getElementById("passportForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        let fam = familiya.value.trim();
+        let name = ism.value.trim();
+        let otasi = otasining.value.trim();
+        let jins = jinsi.value;
+        let tugilgan = sana.value;
+        let pas = pasport.value.trim();
+        let berilgan = joy.value.trim();
+        let fuqaro = fuqarolik.value;
+
+        if (!fam || !name || !otasi || !jins || !tugilgan || !pas || !berilgan || !fuqaro) {
+            alert("Iltimos, barcha maydonlarni to‘ldiring!");
+            return;
+        }
+
+        let table = document.getElementById("dataTable");
+
+        let row = `
+            <tr>
+                <td>${fam}</td>
+                <td>${name}</td>
+                <td>${otasi}</td>
+                <td>${jins}</td>
+                <td>${tugilgan}</td>
+                <td>${pas}</td>
+                <td>${berilgan}</td>
+                <td>${fuqaro}</td>
+            </tr>
+        `;
+
+        table.innerHTML += row;
+
+        document.getElementById("passportForm").reset();
+    });
+</script>
+
+</body>
+</html>
