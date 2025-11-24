@@ -1,0 +1,111 @@
+/* Umumiy sozlamalar */
+body {
+    font-family: Arial, sans-serif;
+    background: #eef1f5;
+    margin: 0;
+}
+
+/* Asosiy konteyner */
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+/* Sarlavhalar */
+h1, h2 {
+    text-align: center;
+}
+
+/* Form elementlari */
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* Tugma */
+.btn {
+    background: #28a745;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+
+.btn:hover {
+    background: #218838;
+}
+
+/* Jadval */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+}
+
+th, td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: #1f3347;
+    color: white;
+}
+
+/* Flex qutichalar */
+.flex-box {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.flex-item {
+    background: #2d8be0;
+    color: white;
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+/* Grid qutichalar */
+.grid-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.grid-item {
+    background: #9b59b6;
+    padding: 20px;
+    color: white;
+    border-radius: 10px;
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Qo‘shimcha */
+.extra {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 18px;
+}
