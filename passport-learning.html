@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pasport - Learning Demo (L1-L15)</title>
+  <link rel="stylesheet" href="passport-learning.css">
+  <script src="passport-learning.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>Pasport ma'lumotlari — Interaktiv darslik</h1>
+    <p class="subtitle">L1-L15 bo'yicha amaliy misollar — sahifa interaktiv va eksperimental</p>
+    <nav class="top-nav">
+      <a href="index.html">Bosh sahifa</a> •
+      <a href="passport-json.html">JSON sahifa</a> •
+      <a href="citizen-profile.html">Citizen profile</a>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- L1: HTML structure and elements -->
+    <section id="structure" class="panel">
+      <h2>1. HTML asosiy tuzilmasi</h2>
+      <p>Taglar: &lt;header&gt;, &lt;main&gt;, &lt;section&gt;, &lt;article&gt;, &lt;footer&gt; — ushbu sahifa ularga misol.</p>
+      <pre>&lt;section id="structure" class="panel"&gt; ... &lt;/section&gt;</pre>
+    </section>
+
+    <!-- L2: text formatting -->
+    <section id="text-format" class="panel">
+      <h2>2. Matn formatlash elementlari</h2>
+      <p><strong>Qalin</strong>, <em>kursiv</em>, <small>kichik</small>, <mark>ta'kid</mark>, <del>o'chirilgan</del></p>
+      <p>Inline kod: <code>const name = 'Ro\'zimova Lobar'</code></p>
+    </section>
+
+    <!-- L3: lists -->
+    <section id="lists" class="panel">
+      <h2>3. Ro'yxatlar</h2>
+      <p>Ordered (tartibli):</p>
+      <ol>
+        <li>Passport so'rov</li>
+        <li>Ma'lumotlarni to'ldirish</li>
+        <li>Saqlash va eksport</li>
+      </ol>
+      <p>Unordered (notsort):</p>
+      <ul>
+        <li>Ism</li>
+        <li>Familiya</li>
+        <li>Jinsi</li>
+      </ul>
+      <p>Definition list:</p>
+      <dl>
+        <dt>passport</dt>
+        <dd>Rasmiy hujjat</dd>
+      </dl>
+    </section>
+
+    <!-- L4: table -->
+    <section id="table" class="panel">
+      <h2>4. Jadval (table)</h2>
+      <table class="sample-table">
+        <thead><tr><th>Maydon</th><th>Qiymat</th></tr></thead>
+        <tbody>
+          <tr><td>Familiya</td><td>Ro'zimova</td></tr>
+          <tr><td>Ism</td><td>Lobar</td></tr>
+          <tr><td>Jinsi</td><td>Ayol</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- L5: links and images -->
+    <section id="media" class="panel">
+      <h2>5. Gipermurojaatlar va tasvirlar</h2>
+      <p>Saytga havola: <a href="https://www.example.com" target="_blank" rel="noopener">Example</a></p>
+      <p>Rasm: (inline SVG placeholder)</p>
+      <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='80'><rect width='100%' height='100%' fill='%23ffd166'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23021b1b' font-size='18'>Pasport</text></svg>" alt="placeholder"/>
+    </section>
+
+    <!-- L6: form with inputs -->
+    <section id="form" class="panel">
+      <h2>6. Forma: Pasport ma'lumotlari</h2>
+      <form id="passport-form-learning">
+        <div class="form-row"><label>Familiya (surname)<input name="surname" required value="Ro'zimova"></label></div>
+        <div class="form-row"><label>Ism (given)<input name="given" required value="Lobar"></label></div>
+        <div class="form-row"><label>Millati (nationality)<input name="nationality" value="O'ZBEK"></label></div>
+        <div class="form-row"><label>Tug'ilgan sana (dob)<input name="dob" placeholder="dd.mm.yyyy" value="15.05.2004"></label></div>
+        <div class="form-row"><label>Jinsi (sex)
+          <select name="sex">
+            <option value="">— tanlang —</option>
+            <option value="Ayol" selected>Ayol</option>
+            <option value="Erkak">Erkak</option>
+          </select>
+        </label></div>
+        <div class="form-row"><label>Seriya/raqam (serial)<input name="serial" value="AA 1234567"></label></div>
+        <div class="form-row"><label>Amal qilish (expiry)<input name="expiry" placeholder="dd.mm.yyyy" value="25.05.2030"></label></div>
+
+        <div class="form-actions">
+          <button type="submit" id="btn-submit">Saqlash (submit)</button>
+          <button type="button" id="btn-validate">JS tekshirish</button>
+          <button type="button" id="btn-to-json">JSON chiqarish</button>
+        </div>
+      </form>
+      <div id="form-messages" class="messages"></div>
+    </section>
+
+    <!-- L7/L8/L9/L10: CSS examples (text styling, flexbox, grid, media queries, transition) -->
+    <section id="css-examples" class="panel">
+      <h2>7-10. CSS: matn bezak, Flexbox, Grid, Media Queries, Transition</h2>
+      <div class="demo-flex">
+        <div class="box">Flex 1</div>
+        <div class="box">Flex 2</div>
+        <div class="box">Flex 3</div>
+      </div>
+
+      <div class="demo-grid">
+        <div class="g-item">Grid A</div>
+        <div class="g-item">Grid B</div>
+        <div class="g-item">Grid C</div>
+        <div class="g-item">Grid D</div>
+      </div>
+
+      <div class="anim-box" id="animBox">Hover for transition</div>
+    </section>
+
+    <!-- L11-L15: JavaScript, DOM, events, validation, JSON import/export -->
+    <section id="js-examples" class="panel">
+      <h2>11-15. JavaScript: funksiyalar, DOM, eventlar, validation, JSON</h2>
+
+      <div class="js-row">
+        <button id="btn-show-var">Show JS variable</button>
+        <button id="btn-add-item">DOM add new item</button>
+      </div>
+
+      <div id="dom-list" class="dom-list">
+        <strong>Dinamik ro'yxat:</strong>
+        <ul id="dynamic-ul"><li>Oldingi item</li></ul>
+      </div>
+
+      <div class="json-tools">
+        <button id="btn-export-form">Form -> JSON (save to localStorage)</button>
+        <button id="btn-load-json">Load JSON (from localStorage)</button>
+        <button id="btn-clear-json">Clear saved</button>
+        <pre id="json-output" aria-live="polite">{ }</pre>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">© Pasport Learning — demo sahifa. Sahifada har qanday o'zgartirish faqat lokal brauzerda.</footer>
+</body>
+</html>
